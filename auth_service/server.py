@@ -25,9 +25,11 @@ app.logger.addHandler(StreamHandler(stream=sys.stdout))
 
 engine = sqlalchemy.create_engine(DB_URL)
 
+
 @app.before_request
 def before_request():
     g.db = engine.connect()
+
 
 @app.teardown_request
 def teardown_request(exception):
