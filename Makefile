@@ -12,5 +12,5 @@ migrate:
 
 test:
 	docker-compose up -d && \
-	docker-compose run web coverage run --source=auth_service test.py && \
+	docker-compose run web python3 test.py && \
 	docker-compose run web coverage html
