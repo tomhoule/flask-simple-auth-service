@@ -11,4 +11,10 @@ RUN pip3 install -v --use-wheel  --find-links=/app/wheelhouse/ -r requirements.t
 
 COPY . /app/
 
-CMD uwsgi --plugin=python3 --workers=2 auth_service/uwsgi.py
+CMD ["uwsgi", \
+     "--plugin=python3", \
+     "--workers=4", \
+     "--threads=2", \
+     "--wsgi-file=/app/auth_service/server.py", \
+     "--callable=app", \
+     "--http-socket=0.0.0.0:5000"]
