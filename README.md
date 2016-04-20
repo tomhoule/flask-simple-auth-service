@@ -1,0 +1,2 @@
+
+- Sel aléatoire par utilisateur

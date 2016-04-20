@@ -1,0 +1,7 @@
+Alembic
+Flask
+PyJWT
+SQLAlchemy
+coverage
+psycopg2
+python-dotenv==0.4

@@ -1,0 +1,20 @@
+version: '2'
+services:
+    web:
+        build: .
+        command: [python3, /app/dev-server.py]
+        environment:
+          DB_URL: "postgres://auth_administrator:mypass@postgres:5432/auth_service"
+          DEBUG: "1"
+        ports:
+          - "5000:5000"
+        volumes:
+          - './:/app/'
+    postgres:
+        environment:
+          POSTGRES_USER: auth_administrator
+          POSTGRES_DB: auth_service
+          POSTGRES_PASSWORD: mypass
+        image: postgres
+        ports:
+          - "5432:5432"
