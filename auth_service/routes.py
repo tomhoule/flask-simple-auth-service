@@ -15,7 +15,6 @@ def admin_only(view):
                 raise UnauthorizedException()
         else:
             raise UnauthenticatedException("Unauthenticated request")
-    # raise Exception("heeeey yo")
     return check_request
 
 
